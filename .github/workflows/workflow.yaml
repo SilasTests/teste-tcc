@@ -10,6 +10,9 @@ jobs:
       - name: Clonar respositório
         uses: actions/checkout@v3
         
+      - name: Mostrar informações do github
+        run: echo "$GITHUB_CONTEXT"
+
       - name: Configurar ambiente para testes
         run: |
           sudo apt-get update
