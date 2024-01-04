@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Clonar respositório
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configurar ambiente para testes
         run: |
@@ -34,8 +36,6 @@ jobs:
 
       - name: Enviar resultados para o repositório
         run: |
-          git config --global user.name "${USER}"
-          git config --global user.email "${EMAIL}"
           git add results.xml
           git commit -m "Adicionando/atualizando resultados"
           git push
