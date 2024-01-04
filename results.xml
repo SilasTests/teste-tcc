@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="6" time="0.055" timestamp="2023-10-10T16:36:18.206785" hostname="fv-az627-447"><testcase classname="tests.test_code" name="test_addition1" time="0.002" /><testcase classname="tests.test_code" name="test_addition2" time="0.002" /><testcase classname="tests.test_code" name="test_addition3" time="0.002"><failure message="AssertionError: assert 8 == 7&#10; +  where 8 = int('8')&#10; +    where '8' = &lt;built-in method decode of bytes object at 0x7f05bdbcf9c0&gt;()&#10; +      where &lt;built-in method decode of bytes object at 0x7f05bdbcf9c0&gt; = b'8'.decode&#10; +        where b'8' = CompletedProcess(args='./main', returncode=0, stdout=b'8', stderr=b'').stdout">def test_addition3():
+        input_data = "4 4/n"
+    
+        result = subprocess.run(
+            "./main",
+            input=input_data.encode(),
+            stdout=subprocess.PIPE,    # Capture a saída padrão
+            stderr=subprocess.PIPE,    # Capture a saída de erro
+        )
+    
+&gt;       assert int(result.stdout.decode()) == 7
+E       AssertionError: assert 8 == 7
+E        +  where 8 = int('8')
+E        +    where '8' = &lt;built-in method decode of bytes object at 0x7f05bdbcf9c0&gt;()
+E        +      where &lt;built-in method decode of bytes object at 0x7f05bdbcf9c0&gt; = b'8'.decode
+E        +        where b'8' = CompletedProcess(args='./main', returncode=0, stdout=b'8', stderr=b'').stdout
+
+tests/test_code.py:41: AssertionError</failure></testcase><testcase classname="tests.test_code2" name="test_addition4" time="0.002" /><testcase classname="tests.test_code2" name="test_addition5" time="0.001" /><testcase classname="tests.test_code2" name="test_addition6" time="0.001" /></testsuite></testsuites>
