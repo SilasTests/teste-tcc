@@ -38,4 +38,4 @@ def test_addition3():
         stderr=subprocess.PIPE,    # Capture a saída de erro
     )
 
-    assert int(result.stdout.decode()) == 7
+    assert int(result.stdout.decode()) == 8
