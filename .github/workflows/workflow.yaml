@@ -13,7 +13,7 @@ jobs:
       - name: Mostrar informações do github
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: echo "${{ github.event.commits.author.email }}"
 
       - name: Configurar ambiente para testes
         run: |
@@ -39,8 +39,8 @@ jobs:
 
       - name: Enviar resultados para o repositório
         run: |
-          git config --global user.name ${{ github.actor }}
-          git config --global user.email ${{ github.event.commits.author.email }}
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.event.commits.author.email }}"
           git add results.xml
           git commit -m "Adicionando/atualizando resultados"
           git push
