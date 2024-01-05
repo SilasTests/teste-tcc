@@ -39,8 +39,8 @@ jobs:
 
       - name: Enviar resultados para o repositório
         run: |
-          git config --global user.name "SilasTests"
-          git config --global user.email "silas.madara@gmail.com"
+          git config --global user.name "GitHub"
+          git config --global user.email "noreply@github.com"
           git add results.xml
           git commit -m "Adicionando/atualizando resultados"
           git push
