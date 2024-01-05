@@ -1,7 +1,9 @@
 name: Continuos Integration
 
 on: push
-
+permissions:
+  contents: write
+  
 jobs:
   continuos-integration:
     runs-on: ubuntu-latest
