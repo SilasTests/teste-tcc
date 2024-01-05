@@ -8,8 +8,8 @@ def test_addition1():
     result = subprocess.run(
         "./main",
         input=input_data.encode(),
-        stdout=subprocess.PIPE,    # Capture a saída padrão
-        stderr=subprocess.PIPE,    # Capture a saída de erro
+        stdout=subprocess.PIPE,    
+        stderr=subprocess.PIPE,    
     )
 
     assert int(result.stdout.decode()) == result_data
@@ -21,8 +21,8 @@ def test_addition2():
     result = subprocess.run(
         "./main",
         input=input_data.encode(),
-        stdout=subprocess.PIPE,    # Capture a saída padrão
-        stderr=subprocess.PIPE,    # Capture a saída de erro
+        stdout=subprocess.PIPE,   
+        stderr=subprocess.PIPE,    
     )
 
     assert int(result.stdout.decode()) == 6
@@ -34,8 +34,8 @@ def test_addition3():
     result = subprocess.run(
         "./main",
         input=input_data.encode(),
-        stdout=subprocess.PIPE,    # Capture a saída padrão
-        stderr=subprocess.PIPE,    # Capture a saída de erro
+        stdout=subprocess.PIPE,    
+        stderr=subprocess.PIPE,   
     )
 
     assert int(result.stdout.decode()) == 8
