@@ -38,9 +38,9 @@ jobs:
           path: results.xml
 
       - name: Enviar resultados para o repositório
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config --global user.name ${{ github.actor }}
+          git config --global user.email ${{ github.event.commits.author.email }}
           git add results.xml
           git commit -m "Adicionando/atualizando resultados"
           git push
